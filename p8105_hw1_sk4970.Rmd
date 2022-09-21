@@ -1,0 +1,9 @@
+---
+title: "Homework 1 - Sara Kramer"
+output: github_document
+---
+
+```{r}
+
+```
+
