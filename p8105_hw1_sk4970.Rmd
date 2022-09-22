@@ -12,10 +12,21 @@ library(tidyverse)
 ```{r} 
 data("penguins", package = "palmerpenguins")
 
-penguins = 
-  penguins %>%
-  mutate
-  rename
-  
+view("penguins")
+
+nrow(penguins)
+
+ncol(penguins)
+
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm)) + geom_point()
+
+ggsave("penguin_scatter_plot.pdf")
+```
+
+# Problem 2
+```{r}
+
 ```
 
