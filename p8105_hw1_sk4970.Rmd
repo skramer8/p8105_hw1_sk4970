@@ -4,6 +4,18 @@ output: github_document
 ---
 
 ```{r}
+echo = FALSE
+library(tidyverse)
+```
 
+# Problem 1
+```{r} 
+data("penguins", package = "palmerpenguins")
+
+penguins = 
+  penguins %>%
+  mutate
+  rename
+  
 ```
 
