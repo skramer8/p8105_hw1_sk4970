@@ -4,15 +4,12 @@ output: github_document
 ---
 
 ```{r}
-echo = FALSE
 library(tidyverse)
 ```
 
 # Problem 1
 ```{r} 
 data("penguins", package = "palmerpenguins")
-
-view("penguins")
 
 nrow(penguins)
 
@@ -27,6 +24,34 @@ ggsave("penguin_scatter_plot.pdf")
 
 # Problem 2
 ```{r}
+samp = rnorm(10)
+norm_samp_pos = samp > 0
 
+samp = tibble(
+  vec_numeric = 11:20,
+  vec_char = c("I", "have", "been", "to", "more", "than", "ten", "countries", "so", "far"),
+  vec_logical = c(TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE),
+  vec_factor = factor(c("alone", "family", "family", "friends", "alone", "friend", "friends", "alone", "family", "friends"))
+)
+
+mean(samp$vec_numeric)
+
+samp %>% 
+  pull(vec_char) %>% 
+  mean()
+
+samp %>% 
+  pull(vec_logical) %>% 
+  mean()
+
+samp %>% 
+  pull(vec_factor) %>% 
+  mean()
+```
+
+```{r eval = FALSE}
+as.numeric(samp$vec_cha)
+as.numeric(samp$vec_logical)
+as.numeric(samp$factor)
 ```
 

@@ -1,6 +1,6 @@
-# p8105_hw1_sk4970
+#HW 1 - Sara Kramer
 
-# load tidyverse
+## load tidyverse
 library(tidyverse)
 
 # PROBLEM 1
@@ -28,8 +28,47 @@ ggsave("penguin_scatter_plot.pdf")
 
 # PROBLEM 2 
 
-## c
+## creating random sample of 10 from st. norm distrib
+samp = rnorm(10)
 
+## creating logical vector indiciated whether elements are > 0
+norm_samp_pos = samp > 0
 
+## character vector of l = 10, factor vector of l = 10, with diff 'levels'
+samp = tibble(
+  vec_numeric = 11:20,
+  vec_char = c("I", "have", "been", "to", "more", "than", "ten", "countries", "so", "far"),
+  vec_logical = c(TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE),
+  vec_factor = factor(c("alone", "family", "family", "friends", "alone", "friend", "friends", "alone", "family", "friends"))
+)
+
+## taking the means
+mean(samp$vec_numeric)
+### mean=15.5
+
+samp %>% 
+  pull(vec_char) %>% 
+  mean()
+### does not work
+
+samp %>% 
+  pull(vec_logical) %>% 
+  mean()
+### mean=0.5
+
+samp %>% 
+  pull(vec_factor) %>% 
+  mean()
+### does not work
+
+eval = FALSE
+as.numeric(samp$vec_char)
+### get a warning message that it is not possible. Explains why I could not get a mean
+
+as.numeric(samp$vec_logical)
+### turns the true/false into 1's and 0's. This is why I could get a mean
+
+as.numeric(samp$factor)
+### get a warning message that it is not possible. Explains why I could not get a mean
 
 
